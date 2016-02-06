@@ -5,6 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>fdp.classes.fdp_globals &mdash; Fusion Data Framework 0.0.0 documentation</title>
@@ -14,7 +15,6 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
   
   
@@ -34,7 +34,7 @@
         <link rel="up" title="Module code" href="../../index.html"/> 
 
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+  <script src="../../../_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -44,11 +44,27 @@
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-nav-search">
-        
-          <a href="../../../index.html" class="fa fa-home"> Fusion Data Framework</a>
-        
-        
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Fusion Data Framework
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0
+              </div>
+            
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -56,37 +72,25 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-      </div>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-        
           
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../introduction.html">Introduction</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../introduction.html#fusion-data-platform">Fusion Data Platform</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../introduction.html#quick-start">Quick start</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../introduction.html#lead-developers">Lead developers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../introduction.html#license">License</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_guide.html">User Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../user_guide.html#getting-started">Getting started</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../user_guide.html#usage-examples">Usage examples</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer_guide.html">Developer Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../developer_guide.html#getting-started">Getting started</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../developer_guide.html#package-reference">Package reference</a></li>
-</ul>
-</li>
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_guide.html">Developer Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../project_documents.html">Project Documents</a></li>
 </ul>
 
+            
           
-        
+        </div>
       </div>
-      &nbsp;
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -101,7 +105,13 @@
       
       <div class="wy-nav-content">
         <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../../../index.html">Docs</a> &raquo;</li>
       
@@ -110,14 +120,17 @@
     <li>fdp.classes.fdp_globals</li>
       <li class="wy-breadcrumbs-aside">
         
+          
+        
       </li>
   </ul>
   <hr/>
 </div>
-          <div role="main" class="document">
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <h1>Source code for fdp.classes.fdp_globals</h1><div class="highlight"><pre>
-<span class="c"># -*- coding: utf-8 -*-</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">Package-level attributes, methods, and FdfError class</span>
 
@@ -127,30 +140,30 @@
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="kn">import</span> <span class="nn">os</span>
 
-<span class="n">MACHINES</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;nstx&#39;</span><span class="p">,</span> <span class="s">&#39;diiid&#39;</span><span class="p">,</span> <span class="s">&#39;cmod&#39;</span><span class="p">]</span>
+<span class="n">MACHINES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;nstx&#39;</span><span class="p">,</span> <span class="s1">&#39;diiid&#39;</span><span class="p">,</span> <span class="s1">&#39;cmod&#39;</span><span class="p">]</span>
 
 <span class="n">FDP_DIR</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">__file__</span><span class="p">))</span>
 <span class="n">FDP_DIR</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">FDP_DIR</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">pardir</span><span class="p">)</span>
 <span class="sd">&quot;&quot;&quot;Path string: top-level directory for FDF package&quot;&quot;&quot;</span>
 
 <span class="n">MDS_SERVERS</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s">&#39;nstx&#39;</span><span class="p">:</span> <span class="s">&#39;skylark.pppl.gov:8501&#39;</span>
+    <span class="s1">&#39;nstx&#39;</span><span class="p">:</span> <span class="s1">&#39;skylark.pppl.gov:8501&#39;</span>
 <span class="p">}</span>
 
 <span class="n">EVENT_SERVERS</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s">&#39;nstx&#39;</span><span class="p">:</span> <span class="s">&#39;skylark.pppl.gov:8501&#39;</span><span class="p">,</span>
-    <span class="s">&#39;ltx&#39;</span><span class="p">:</span> <span class="s">&#39;lithos.pppl.gov:8000&#39;</span>
+    <span class="s1">&#39;nstx&#39;</span><span class="p">:</span> <span class="s1">&#39;skylark.pppl.gov:8501&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;ltx&#39;</span><span class="p">:</span> <span class="s1">&#39;lithos.pppl.gov:8000&#39;</span>
 <span class="p">}</span>
 <span class="sd">&quot;&quot;&quot;Dictionary: machine-name key paired to MDS server&quot;&quot;&quot;</span>
 
 <span class="n">LOGBOOK_CREDENTIALS</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s">&#39;nstx&#39;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s">&#39;server&#39;</span><span class="p">:</span> <span class="s">&#39;sql2008.pppl.gov\sql2008&#39;</span><span class="p">,</span>
-        <span class="s">&#39;username&#39;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s">&#39;USER&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s">&#39;USERNAME&#39;</span><span class="p">),</span>
-        <span class="s">&#39;password&#39;</span><span class="p">:</span> <span class="s">&#39;pfcworld&#39;</span><span class="p">,</span>
-        <span class="s">&#39;database&#39;</span><span class="p">:</span> <span class="s">&#39;nstxlogs&#39;</span><span class="p">,</span>
-        <span class="s">&#39;port&#39;</span><span class="p">:</span> <span class="s">&#39;62917&#39;</span><span class="p">,</span>
-        <span class="s">&#39;table&#39;</span><span class="p">:</span> <span class="s">&#39;entries&#39;</span>
+    <span class="s1">&#39;nstx&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;server&#39;</span><span class="p">:</span> <span class="s1">&#39;sql2008.pppl.gov\sql2008&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;username&#39;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;USER&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;USERNAME&#39;</span><span class="p">),</span>
+        <span class="s1">&#39;password&#39;</span><span class="p">:</span> <span class="s1">&#39;pfcworld&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;database&#39;</span><span class="p">:</span> <span class="s1">&#39;nstxlogs&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;port&#39;</span><span class="p">:</span> <span class="s1">&#39;62917&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;table&#39;</span><span class="p">:</span> <span class="s1">&#39;entries&#39;</span>
     <span class="p">}</span>
 <span class="p">}</span>
 <span class="sd">&quot;&quot;&quot;Dictionary: machine-name key paired with logbook login credentials&quot;&quot;&quot;</span>
@@ -159,17 +172,17 @@
 <span class="k">def</span> <span class="nf">machineAlias</span><span class="p">(</span><span class="n">machine</span><span class="p">):</span>
 
     <span class="n">aliases</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s">&#39;nstx&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;nstx&#39;</span><span class="p">,</span> <span class="s">&#39;nstxu&#39;</span><span class="p">,</span> <span class="s">&#39;nstx-u&#39;</span><span class="p">],</span>
-        <span class="s">&#39;diiid&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;diiid&#39;</span><span class="p">,</span> <span class="s">&#39;diii-d&#39;</span><span class="p">,</span> <span class="s">&#39;d3d&#39;</span><span class="p">],</span>
-        <span class="s">&#39;cmod&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;cmod&#39;</span><span class="p">,</span> <span class="s">&#39;c-mod&#39;</span><span class="p">]</span>
+        <span class="s1">&#39;nstx&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;nstx&#39;</span><span class="p">,</span> <span class="s1">&#39;nstxu&#39;</span><span class="p">,</span> <span class="s1">&#39;nstx-u&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;diiid&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;diiid&#39;</span><span class="p">,</span> <span class="s1">&#39;diii-d&#39;</span><span class="p">,</span> <span class="s1">&#39;d3d&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;cmod&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;cmod&#39;</span><span class="p">,</span> <span class="s1">&#39;c-mod&#39;</span><span class="p">]</span>
     <span class="p">}</span>
 
     <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">iter</span><span class="p">(</span><span class="n">aliases</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
         <span class="k">if</span> <span class="n">machine</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="n">value</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">key</span>
-    <span class="n">txt</span> <span class="o">=</span> <span class="s">&#39;{} is not a valid machine; valid machines are:</span><span class="se">\n</span><span class="s">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">machine</span><span class="p">)</span>
+    <span class="n">txt</span> <span class="o">=</span> <span class="s1">&#39;{} is not a valid machine; valid machines are:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">machine</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">machinekey</span> <span class="ow">in</span> <span class="n">aliases</span><span class="p">:</span>
-        <span class="n">txt</span> <span class="o">=</span> <span class="n">txt</span> <span class="o">+</span> <span class="s">&#39;  {}</span><span class="se">\n</span><span class="s">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">machinekey</span><span class="p">)</span>
+        <span class="n">txt</span> <span class="o">=</span> <span class="n">txt</span> <span class="o">+</span> <span class="s1">&#39;  {}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">machinekey</span><span class="p">)</span>
     <span class="k">raise</span> <span class="n">FdpError</span><span class="p">(</span><span class="n">txt</span><span class="p">)</span>
 
 
@@ -182,13 +195,14 @@
 <span class="sd">        raise FdfError(&#39;my error message&#39;)</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="n">message</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">message</span></div>
 </pre></div>
 
+           </div>
           </div>
           <footer>
   
@@ -198,12 +212,13 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2015, John Schmitt, David R. Smith, Kevin Tritz, Howard Yuh.
+
     </p>
   </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-  
 </footer>
+
         </div>
       </div>
 

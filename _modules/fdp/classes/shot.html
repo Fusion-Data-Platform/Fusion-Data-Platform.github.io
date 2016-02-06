@@ -5,6 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>fdp.classes.shot &mdash; Fusion Data Framework 0.0.0 documentation</title>
@@ -14,7 +15,6 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
   
   
@@ -34,7 +34,7 @@
         <link rel="up" title="Module code" href="../../index.html"/> 
 
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+  <script src="../../../_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -44,11 +44,27 @@
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-nav-search">
-        
-          <a href="../../../index.html" class="fa fa-home"> Fusion Data Framework</a>
-        
-        
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Fusion Data Framework
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0
+              </div>
+            
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -56,37 +72,25 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-      </div>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-        
           
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../introduction.html">Introduction</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../introduction.html#fusion-data-platform">Fusion Data Platform</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../introduction.html#quick-start">Quick start</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../introduction.html#lead-developers">Lead developers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../introduction.html#license">License</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_guide.html">User Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../user_guide.html#getting-started">Getting started</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../user_guide.html#usage-examples">Usage examples</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer_guide.html">Developer Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../developer_guide.html#getting-started">Getting started</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../developer_guide.html#package-reference">Package reference</a></li>
-</ul>
-</li>
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_guide.html">Developer Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../project_documents.html">Project Documents</a></li>
 </ul>
 
+            
           
-        
+        </div>
       </div>
-      &nbsp;
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -101,7 +105,13 @@
       
       <div class="wy-nav-content">
         <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../../../index.html">Docs</a> &raquo;</li>
       
@@ -110,14 +120,17 @@
     <li>fdp.classes.shot</li>
       <li class="wy-breadcrumbs-aside">
         
+          
+        
       </li>
   </ul>
   <hr/>
 </div>
-          <div role="main" class="document">
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <h1>Source code for fdp.classes.shot</h1><div class="highlight"><pre>
-<span class="c"># -*- coding: utf-8 -*-</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">Created on Wed Nov 25 12:14:03 2015</span>
 
@@ -146,7 +159,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_efits</span> <span class="o">=</span> <span class="p">[]</span>
 
     <span class="k">def</span> <span class="nf">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attribute</span><span class="p">):</span>
-        <span class="c"># first see if the attribute is in the Machine object</span>
+        <span class="c1"># first see if the attribute is in the Machine object</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">attr</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_parent</span><span class="p">,</span> <span class="n">attribute</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">inspect</span><span class="o">.</span><span class="n">ismethod</span><span class="p">(</span><span class="n">attr</span><span class="p">):</span>
@@ -154,20 +167,20 @@
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">return</span> <span class="n">attr</span>
         <span class="k">except</span><span class="p">:</span>
-            <span class="k">pass</span>  <span class="c"># failed, so check other locations</span>
+            <span class="k">pass</span>  <span class="c1"># failed, so check other locations</span>
         <span class="k">if</span> <span class="n">attribute</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_modules</span><span class="p">:</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_modules</span><span class="p">[</span><span class="n">attribute</span><span class="p">]</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_modules</span><span class="p">[</span><span class="n">attribute</span><span class="p">]</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">Factory</span><span class="p">(</span><span class="n">attribute</span><span class="p">,</span> <span class="n">Container</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_root</span><span class="p">,</span>
                                                    <span class="n">shot</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">shot</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_modules</span><span class="p">[</span><span class="n">attribute</span><span class="p">]</span>
-        <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s">&quot;{} shot: {} has no attribute &#39;{}&#39;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s2">&quot;{} shot: {} has no attribute &#39;{}&#39;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
                                  <span class="bp">self</span><span class="o">.</span><span class="n">_root</span><span class="o">.</span><span class="n">_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">shot</span><span class="p">,</span> <span class="n">attribute</span><span class="p">))</span>
 
     <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s">&#39;&lt;Shot {}&gt;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">shot</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s1">&#39;&lt;Shot {}&gt;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">shot</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="c"># return iter(self._modules.values())</span>
+        <span class="c1"># return iter(self._modules.values())</span>
         <span class="k">return</span> <span class="nb">iter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_modules</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__contains__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
@@ -189,12 +202,12 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_modules</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">_get_xp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="c"># query logbook for XP, return XP (list if needed)</span>
+        <span class="c1"># query logbook for XP, return XP (list if needed)</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_logbook_entries</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_logbook_entries</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_logbook</span><span class="o">.</span><span class="n">get_entries</span><span class="p">(</span><span class="n">shot</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">shot</span><span class="p">)</span>
         <span class="n">xplist</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_logbook_entries</span><span class="p">:</span>
-            <span class="n">xplist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">entry</span><span class="p">[</span><span class="s">&#39;xp&#39;</span><span class="p">])</span>
+            <span class="n">xplist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">entry</span><span class="p">[</span><span class="s1">&#39;xp&#39;</span><span class="p">])</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">xplist</span><span class="p">))</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
             <span class="n">xp</span> <span class="o">=</span> <span class="n">xplist</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
@@ -202,34 +215,34 @@
         <span class="k">return</span> <span class="n">xp</span>
 
     <span class="k">def</span> <span class="nf">_get_date</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="c"># query logbook for rundate, return rundate</span>
+        <span class="c1"># query logbook for rundate, return rundate</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_logbook_entries</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_logbook_entries</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_logbook</span><span class="o">.</span><span class="n">get_entries</span><span class="p">(</span><span class="n">shot</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">shot</span><span class="p">)</span>
         <span class="n">date</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_logbook_entries</span><span class="p">:</span>
-            <span class="n">date</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_logbook_entries</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s">&#39;rundate&#39;</span><span class="p">]</span>
+            <span class="n">date</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_logbook_entries</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;rundate&#39;</span><span class="p">]</span>
         <span class="k">return</span> <span class="n">date</span>
 
     <span class="k">def</span> <span class="nf">logbook</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="c"># return a list of logbook entries (dictionaries)</span>
+        <span class="c1"># return a list of logbook entries (dictionaries)</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_logbook_entries</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_logbook_entries</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_logbook</span><span class="o">.</span><span class="n">get_entries</span><span class="p">(</span><span class="n">shot</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">shot</span><span class="p">)</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_logbook_entries</span><span class="p">:</span>
-            <span class="k">print</span><span class="p">(</span><span class="s">&#39;Logbook entries for {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">shot</span><span class="p">))</span>
+            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Logbook entries for {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">shot</span><span class="p">))</span>
             <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_logbook_entries</span><span class="p">:</span>
-                <span class="k">print</span><span class="p">(</span><span class="s">&#39;************************************&#39;</span><span class="p">)</span>
-                <span class="k">print</span><span class="p">((</span><span class="s">&#39;{shot} on {rundate} in XP {xp}</span><span class="se">\n</span><span class="s">&#39;</span>
-                       <span class="s">&#39;{username} in topic {topic}</span><span class="se">\n\n</span><span class="s">&#39;</span>
-                       <span class="s">&#39;{text}&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">entry</span><span class="p">))</span>
-            <span class="k">print</span><span class="p">(</span><span class="s">&#39;************************************&#39;</span><span class="p">)</span>
+                <span class="k">print</span><span class="p">(</span><span class="s1">&#39;************************************&#39;</span><span class="p">)</span>
+                <span class="k">print</span><span class="p">((</span><span class="s1">&#39;{shot} on {rundate} in XP {xp}</span><span class="se">\n</span><span class="s1">&#39;</span>
+                       <span class="s1">&#39;{username} in topic {topic}</span><span class="se">\n\n</span><span class="s1">&#39;</span>
+                       <span class="s1">&#39;{text}&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">entry</span><span class="p">))</span>
+            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;************************************&#39;</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">print</span><span class="p">(</span><span class="s">&#39;No logbook entries for {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">shot</span><span class="p">))</span>
+            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;No logbook entries for {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">shot</span><span class="p">))</span>
 
     <span class="k">def</span> <span class="nf">check_efit</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_efits</span><span class="p">):</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_efits</span>
-        <span class="n">trees</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;efit{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">index</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span> <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">)]</span>
-        <span class="n">trees</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="s">&#39;lrdfit{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">index</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+        <span class="n">trees</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;efit{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">index</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span> <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">)]</span>
+        <span class="n">trees</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="s1">&#39;lrdfit{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">index</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
                       <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">)])</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">shot</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">trees</span>
@@ -238,15 +251,16 @@
             <span class="n">data</span> <span class="o">=</span> <span class="bp">None</span>
             <span class="n">connection</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_connection</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">shot</span><span class="p">,</span> <span class="n">tree</span><span class="p">)</span>
             <span class="k">try</span><span class="p">:</span>
-                <span class="n">data</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;\{}::userid&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tree</span><span class="p">))</span><span class="o">.</span><span class="n">value</span>
+                <span class="n">data</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;\{}::userid&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tree</span><span class="p">))</span><span class="o">.</span><span class="n">value</span>
             <span class="k">except</span><span class="p">:</span>
                 <span class="k">pass</span>
-            <span class="k">if</span> <span class="n">data</span> <span class="ow">and</span> <span class="n">data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="s">&#39;*&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">data</span> <span class="ow">and</span> <span class="n">data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="s1">&#39;*&#39;</span><span class="p">:</span>
                 <span class="n">tree_exists</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tree</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_efits</span> <span class="o">=</span> <span class="n">tree_exists</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_efits</span></div>
 </pre></div>
 
+           </div>
           </div>
           <footer>
   
@@ -256,12 +270,13 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2015, John Schmitt, David R. Smith, Kevin Tritz, Howard Yuh.
+
     </p>
   </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-  
 </footer>
+
         </div>
       </div>
 

@@ -5,6 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Developer Guide &mdash; Fusion Data Framework 0.0.0 documentation</title>
@@ -14,7 +15,6 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
   
   
@@ -35,7 +35,7 @@
         <link rel="prev" title="User Guide" href="user_guide.html"/> 
 
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+  <script src="_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -45,11 +45,27 @@
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-nav-search">
-        
-          <a href="index.html" class="fa fa-home"> Fusion Data Framework</a>
-        
-        
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Fusion Data Framework
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0
+              </div>
+            
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -57,37 +73,49 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-      </div>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-        
           
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
-              <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#fusion-data-platform">Fusion Data Platform</a></li>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#quick-start">Quick start</a></li>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#lead-developers">Lead developers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#license">License</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="user_guide.html">User Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="user_guide.html#getting-started">Getting started</a></li>
-<li class="toctree-l2"><a class="reference internal" href="user_guide.html#usage-examples">Usage examples</a></li>
-</ul>
-</li>
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user_guide.html">User Guide</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Developer Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting started</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#package-reference">Package reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting started</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#configure-git">Configure Git</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#clone-the-fdp-repository">Clone the FDP repository</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#git-workflow-for-fdp-development">Git workflow for FDP development</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#package-reference">Package reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-fdp.classes">Subpackage <code class="docutils literal"><span class="pre">fdp.classes</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-fdp.methods">Subpackage <code class="docutils literal"><span class="pre">fdp.methods</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#class-fdp">Class <code class="docutils literal"><span class="pre">Fdp</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#class-machine">Class <code class="docutils literal"><span class="pre">Machine</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#class-logbook">Class <code class="docutils literal"><span class="pre">Logbook</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#class-shot">Class <code class="docutils literal"><span class="pre">Shot</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#class-container">Class <code class="docutils literal"><span class="pre">Container</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#class-signal">Class <code class="docutils literal"><span class="pre">Signal</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#class-node">Class <code class="docutils literal"><span class="pre">Node</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-fdp.classes.fdp_globals">Module <code class="docutils literal"><span class="pre">fdp.classes.fdp_globals</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-fdp.classes.factory">Module <code class="docutils literal"><span class="pre">fdp.classes.factory</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="project_documents.html">Project Documents</a></li>
 </ul>
 
+            
           
-        
+        </div>
       </div>
-      &nbsp;
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -102,20 +130,29 @@
       
       <div class="wy-nav-content">
         <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
     <li>Developer Guide</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="_sources/developer_guide.txt" rel="nofollow"> View page source</a>
+          
+            <a href="_sources/developer_guide.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
   </ul>
   <hr/>
 </div>
-          <div role="main" class="document">
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="section" id="developer-guide">
 <h1>Developer Guide<a class="headerlink" href="#developer-guide" title="Permalink to this headline">¶</a></h1>
@@ -409,7 +446,7 @@ sig=fdp.Signal(units=&#8217;m/s&#8217;, axes=[&#8216;radius&#8217;,&#8217;time&#
 <em class="property">exception </em><code class="descclassname">fdp.classes.fdp_globals.</code><code class="descname">FdpError</code><span class="sig-paren">(</span><em>message=''</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fdp/classes/fdp_globals.html#FdpError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fdp.classes.fdp_globals.FdpError" title="Permalink to this definition">¶</a></dt>
 <dd><p>Error class for FDF package</p>
 <p><strong>Usage</strong>:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">raise</span> <span class="n">FdfError</span><span class="p">(</span><span class="s">&#39;my error message&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">raise</span> <span class="n">FdfError</span><span class="p">(</span><span class="s1">&#39;my error message&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -430,15 +467,16 @@ sig=fdp.Signal(units=&#8217;m/s&#8217;, axes=[&#8216;radius&#8217;,&#8217;time&#
 </div>
 
 
+           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="project_documents.html" class="btn btn-neutral float-right" title="Project Documents">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="project_documents.html" class="btn btn-neutral float-right" title="Project Documents" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="user_guide.html" class="btn btn-neutral" title="User Guide"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="user_guide.html" class="btn btn-neutral" title="User Guide" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -448,12 +486,13 @@ sig=fdp.Signal(units=&#8217;m/s&#8217;, axes=[&#8216;radius&#8217;,&#8217;time&#
   <div role="contentinfo">
     <p>
         &copy; Copyright 2015, John Schmitt, David R. Smith, Kevin Tritz, Howard Yuh.
+
     </p>
   </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-  
 </footer>
+
         </div>
       </div>
 
