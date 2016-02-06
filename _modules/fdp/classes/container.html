@@ -1,0 +1,420 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>fdp.classes.container &mdash; Fusion Data Framework 0.0.0 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Fusion Data Framework 0.0.0 documentation" href="../../../index.html"/>
+        <link rel="up" title="Module code" href="../../index.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+          <a href="../../../index.html" class="fa fa-home"> Fusion Data Framework</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../introduction.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../introduction.html#fusion-data-platform">Fusion Data Platform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../introduction.html#quick-start">Quick start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../introduction.html#lead-developers">Lead developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../introduction.html#license">License</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_guide.html">User Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../user_guide.html#getting-started">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../user_guide.html#usage-examples">Usage examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_guide.html">Developer Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer_guide.html#getting-started">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer_guide.html#package-reference">Package reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../project_documents.html">Project Documents</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">Fusion Data Framework</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+      
+    <li>fdp.classes.container</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <h1>Source code for fdp.classes.container</h1><div class="highlight"><pre>
+<span class="c"># -*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Created on Wed Nov 25 13:58:50 2015</span>
+
+<span class="sd">@author: ktritz</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">inspect</span>
+<span class="kn">import</span> <span class="nn">types</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">fdp_globals</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">factory</span>
+<span class="kn">from</span> <span class="nn">.node</span> <span class="kn">import</span> <span class="n">Node</span>
+<span class="kn">from</span> <span class="nn">.fdpsignal</span> <span class="kn">import</span> <span class="n">Signal</span>
+
+
+<span class="n">FDP_DIR</span> <span class="o">=</span> <span class="n">fdp_globals</span><span class="o">.</span><span class="n">FDP_DIR</span>
+
+<div class="viewcode-block" id="Container"><a class="viewcode-back" href="../../../developer_guide.html#fdp.classes.container.Container">[docs]</a><span class="k">class</span> <span class="nc">Container</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Container class</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">_instances</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">_classes</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">module_tree</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+        <span class="n">cls</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_signals</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_axes</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_containers</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dynamic_containers</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_tags</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_title</span> <span class="o">=</span> <span class="n">module_tree</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;title&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_desc</span> <span class="o">=</span> <span class="n">module_tree</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;desc&#39;</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">read_only</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;parent&#39;</span><span class="p">]:</span>
+            <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">&#39;_&#39;</span><span class="o">+</span><span class="n">read_only</span><span class="p">,</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">read_only</span><span class="p">,</span> <span class="bp">None</span><span class="p">))</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">shot</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;shot&#39;</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_mdstree</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;mdstree&#39;</span><span class="p">]</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">pass</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">shot</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">cls</span><span class="o">.</span><span class="n">_instances</span><span class="p">[</span><span class="n">cls</span><span class="p">][</span><span class="bp">self</span><span class="o">.</span><span class="n">shot</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="n">cls</span><span class="o">.</span><span class="n">_instances</span><span class="p">[</span><span class="n">cls</span><span class="p">][</span><span class="bp">self</span><span class="o">.</span><span class="n">shot</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">top</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_get_dynamic_containers</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">module_tree</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s">&#39;node&#39;</span><span class="p">):</span>
+            <span class="n">branch_str</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_branchstr</span><span class="p">()</span>
+            <span class="n">NodeClassName</span> <span class="o">=</span> <span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s">&#39;Node&#39;</span><span class="p">,</span> <span class="n">branch_str</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">NodeClassName</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">cls</span><span class="o">.</span><span class="n">_classes</span><span class="p">:</span>
+                <span class="n">NodeClass</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">NodeClassName</span><span class="p">,</span> <span class="p">(</span><span class="n">Node</span><span class="p">,</span> <span class="n">cls</span><span class="p">),</span> <span class="p">{})</span>
+                <span class="n">cls</span><span class="o">.</span><span class="n">_classes</span><span class="p">[</span><span class="n">NodeClassName</span><span class="p">]</span> <span class="o">=</span> <span class="n">NodeClass</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">NodeClass</span> <span class="o">=</span> <span class="n">cls</span><span class="o">.</span><span class="n">_classes</span><span class="p">[</span><span class="n">NodeClassName</span><span class="p">]</span>
+            <span class="c"># NodeClass._mdstree = parse_mdstree(self, node)</span>
+            <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;name&#39;</span><span class="p">),</span> <span class="n">NodeClass</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="bp">self</span><span class="p">))</span>
+
+        <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">module_tree</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s">&#39;defaults&#39;</span><span class="p">):</span>
+            <span class="n">method_defaults</span><span class="p">,</span> <span class="n">defaults_dict</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">parse_defaults</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_parent</span><span class="p">,</span> <span class="n">method_defaults</span><span class="p">):</span>
+                <span class="n">defaults_dict</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_parent</span><span class="p">,</span> <span class="n">method_defaults</span><span class="p">))</span>
+            <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">method_defaults</span><span class="p">,</span> <span class="n">defaults_dict</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">module_tree</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s">&#39;axis&#39;</span><span class="p">):</span>
+            <span class="n">signal_list</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">parse_signal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">)</span>
+            <span class="n">branch_str</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_branchstr</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">signal_dict</span> <span class="ow">in</span> <span class="n">signal_list</span><span class="p">:</span>
+                <span class="n">SignalClassName</span> <span class="o">=</span> <span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s">&#39;Axis&#39;</span><span class="p">,</span> <span class="n">branch_str</span><span class="p">])</span>
+                <span class="k">if</span> <span class="n">SignalClassName</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">cls</span><span class="o">.</span><span class="n">_classes</span><span class="p">:</span>
+                    <span class="n">SignalClass</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">SignalClassName</span><span class="p">,</span> <span class="p">(</span><span class="n">Signal</span><span class="p">,</span> <span class="n">cls</span><span class="p">),</span> <span class="p">{})</span>
+                    <span class="n">factory</span><span class="o">.</span><span class="n">parse_method</span><span class="p">(</span><span class="n">SignalClass</span><span class="p">)</span>
+                    <span class="n">cls</span><span class="o">.</span><span class="n">_classes</span><span class="p">[</span><span class="n">SignalClassName</span><span class="p">]</span> <span class="o">=</span> <span class="n">SignalClass</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">SignalClass</span> <span class="o">=</span> <span class="n">cls</span><span class="o">.</span><span class="n">_classes</span><span class="p">[</span><span class="n">SignalClassName</span><span class="p">]</span>
+                <span class="n">SignalObj</span> <span class="o">=</span> <span class="n">SignalClass</span><span class="p">(</span><span class="o">**</span><span class="n">signal_dict</span><span class="p">)</span>
+                <span class="n">refs</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">parse_refs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">SignalObj</span><span class="o">.</span><span class="n">_transpose</span><span class="p">)</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">refs</span><span class="p">:</span>
+                    <span class="n">refs</span> <span class="o">=</span> <span class="n">SignalObj</span><span class="o">.</span><span class="n">axes</span>
+                <span class="k">for</span> <span class="n">axis</span><span class="p">,</span> <span class="n">ref</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">SignalObj</span><span class="o">.</span><span class="n">axes</span><span class="p">,</span> <span class="n">refs</span><span class="p">):</span>
+                    <span class="nb">setattr</span><span class="p">(</span><span class="n">SignalObj</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">&#39;_&#39;</span><span class="o">+</span><span class="n">ref</span><span class="p">))</span>
+                <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s">&#39;_&#39;</span><span class="p">,</span> <span class="n">signal_dict</span><span class="p">[</span><span class="s">&#39;_name&#39;</span><span class="p">]]),</span> <span class="n">SignalObj</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">branch</span> <span class="ow">in</span> <span class="n">module_tree</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s">&#39;container&#39;</span><span class="p">):</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">branch</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;name&#39;</span><span class="p">)</span>
+            <span class="n">branch_str</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_branchstr</span><span class="p">()</span>
+            <span class="n">ContainerClassName</span> <span class="o">=</span> <span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s">&#39;Container&#39;</span><span class="p">,</span> <span class="n">branch_str</span><span class="p">,</span>
+                                          <span class="n">name</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()])</span>
+            <span class="k">if</span> <span class="n">ContainerClassName</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">cls</span><span class="o">.</span><span class="n">_classes</span><span class="p">:</span>
+                <span class="n">ContainerClass</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">ContainerClassName</span><span class="p">,</span> <span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">Container</span><span class="p">),</span> <span class="p">{})</span>
+                <span class="n">factory</span><span class="o">.</span><span class="n">init_class</span><span class="p">(</span><span class="n">ContainerClass</span><span class="p">,</span> <span class="n">branch</span><span class="p">,</span> <span class="n">classparent</span><span class="o">=</span><span class="n">cls</span><span class="p">)</span>
+                <span class="n">cls</span><span class="o">.</span><span class="n">_classes</span><span class="p">[</span><span class="n">ContainerClassName</span><span class="p">]</span> <span class="o">=</span> <span class="n">ContainerClass</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">ContainerClass</span> <span class="o">=</span> <span class="n">cls</span><span class="o">.</span><span class="n">_classes</span><span class="p">[</span><span class="n">ContainerClassName</span><span class="p">]</span>
+            <span class="n">ContainerObj</span> <span class="o">=</span> <span class="n">ContainerClass</span><span class="p">(</span><span class="n">branch</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
+            <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">ContainerObj</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_containers</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">ContainerObj</span>
+
+        <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">module_tree</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s">&#39;signal&#39;</span><span class="p">):</span>
+            <span class="n">signal_list</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">parse_signal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">)</span>
+            <span class="n">branch_str</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_branchstr</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">signal_dict</span> <span class="ow">in</span> <span class="n">signal_list</span><span class="p">:</span>
+                <span class="c"># name = element.get(&#39;name&#39;).format(&#39;&#39;).capitalize()</span>
+                <span class="n">SignalClassName</span> <span class="o">=</span> <span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s">&#39;Signal&#39;</span><span class="p">,</span> <span class="n">branch_str</span><span class="p">])</span>
+                <span class="k">if</span> <span class="n">SignalClassName</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">cls</span><span class="o">.</span><span class="n">_classes</span><span class="p">:</span>
+                    <span class="n">SignalClass</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">SignalClassName</span><span class="p">,</span> <span class="p">(</span><span class="n">Signal</span><span class="p">,</span> <span class="n">cls</span><span class="p">),</span> <span class="p">{})</span>
+                    <span class="n">factory</span><span class="o">.</span><span class="n">parse_method</span><span class="p">(</span><span class="n">SignalClass</span><span class="p">)</span>
+                    <span class="n">cls</span><span class="o">.</span><span class="n">_classes</span><span class="p">[</span><span class="n">SignalClassName</span><span class="p">]</span> <span class="o">=</span> <span class="n">SignalClass</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">SignalClass</span> <span class="o">=</span> <span class="n">cls</span><span class="o">.</span><span class="n">_classes</span><span class="p">[</span><span class="n">SignalClassName</span><span class="p">]</span>
+                <span class="n">SignalObj</span> <span class="o">=</span> <span class="n">SignalClass</span><span class="p">(</span><span class="o">**</span><span class="n">signal_dict</span><span class="p">)</span>
+                <span class="n">refs</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">parse_refs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">SignalObj</span><span class="o">.</span><span class="n">_transpose</span><span class="p">)</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">refs</span><span class="p">:</span>
+                    <span class="n">refs</span> <span class="o">=</span> <span class="n">SignalObj</span><span class="o">.</span><span class="n">axes</span>
+                <span class="k">for</span> <span class="n">axis</span><span class="p">,</span> <span class="n">ref</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">SignalObj</span><span class="o">.</span><span class="n">axes</span><span class="p">,</span> <span class="n">refs</span><span class="p">):</span>
+                    <span class="nb">setattr</span><span class="p">(</span><span class="n">SignalObj</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">&#39;_&#39;</span><span class="o">+</span><span class="n">ref</span><span class="p">))</span>
+                <span class="k">for</span> <span class="n">default</span> <span class="ow">in</span> <span class="n">element</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s">&#39;defaults&#39;</span><span class="p">):</span>
+                    <span class="n">method_defaults</span><span class="p">,</span> <span class="n">defaults_dict</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">parse_defaults</span><span class="p">(</span><span class="n">default</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">method_defaults</span><span class="p">):</span>
+                        <span class="n">defaults_dict</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">method_defaults</span><span class="p">))</span>
+                    <span class="nb">setattr</span><span class="p">(</span><span class="n">SignalObj</span><span class="p">,</span> <span class="n">method_defaults</span><span class="p">,</span> <span class="n">defaults_dict</span><span class="p">)</span>
+                <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">signal_dict</span><span class="p">[</span><span class="s">&#39;_name&#39;</span><span class="p">],</span> <span class="n">SignalObj</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_signals</span><span class="p">[</span><span class="n">signal_dict</span><span class="p">[</span><span class="s">&#39;_name&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">SignalObj</span>
+
+        <span class="k">if</span> <span class="n">top</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">&#39;_preprocess&#39;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_preprocess</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attribute</span><span class="p">):</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dynamic_containers</span><span class="p">[</span><span class="n">attribute</span><span class="p">]</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="n">branch_path</span> <span class="o">=</span> <span class="s">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_branch</span><span class="p">(),</span> <span class="n">attribute</span><span class="p">])</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_dynamic_containers</span><span class="p">[</span><span class="n">attribute</span><span class="p">]</span> <span class="o">=</span> \
+                    <span class="n">factory</span><span class="o">.</span><span class="n">Factory</span><span class="p">(</span><span class="n">branch_path</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_root</span><span class="p">,</span>
+                                    <span class="n">shot</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">shot</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dynamic_containers</span><span class="p">[</span><span class="n">attribute</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="k">pass</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">&#39;_parent&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parent</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s">&quot;Attribute &#39;{}&#39; not found&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">attribute</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_parent</span><span class="p">,</span> <span class="s">&#39;_signals&#39;</span><span class="p">)</span> <span class="ow">and</span> \
+                <span class="n">attribute</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parent</span><span class="o">.</span><span class="n">_signals</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s">&quot;Attribute &#39;{}&#39; not found&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">attribute</span><span class="p">))</span>
+
+        <span class="n">attr</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_parent</span><span class="p">,</span> <span class="n">attribute</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">Container</span> <span class="ow">in</span> <span class="n">attr</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">mro</span><span class="p">()</span> <span class="ow">and</span> <span class="n">attribute</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="s">&#39;_&#39;</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s">&quot;Attribute &#39;{}&#39; not found&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">attribute</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">inspect</span><span class="o">.</span><span class="n">ismethod</span><span class="p">(</span><span class="n">attr</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">types</span><span class="o">.</span><span class="n">MethodType</span><span class="p">(</span><span class="n">attr</span><span class="o">.</span><span class="n">im_func</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">attr</span>
+
+    <span class="k">def</span> <span class="nf">_get_dynamic_containers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_dynamic_containers</span><span class="p">)</span> <span class="ow">is</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">container_dir</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_path</span><span class="p">()</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">container_dir</span><span class="p">):</span>
+                <span class="k">return</span>
+            <span class="n">files</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">container_dir</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_dynamic_containers</span> <span class="o">=</span> <span class="p">{</span><span class="n">container</span><span class="p">:</span> <span class="bp">None</span> <span class="k">for</span> <span class="n">container</span> <span class="ow">in</span>
+                                   <span class="n">files</span> <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span>
+                                   <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">container_dir</span><span class="p">,</span> <span class="n">container</span><span class="p">))</span> <span class="ow">and</span>
+                                   <span class="n">container</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="s">&#39;_&#39;</span><span class="p">}</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_get_path</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+        <span class="n">branch</span> <span class="o">=</span> <span class="n">cls</span><span class="o">.</span><span class="n">_get_branch</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;.&#39;</span><span class="p">)</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">FDP_DIR</span><span class="p">,</span> <span class="s">&#39;modules&#39;</span><span class="p">,</span> <span class="n">cls</span><span class="o">.</span><span class="n">_root</span><span class="o">.</span><span class="n">_name</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="n">branch</span><span class="p">:</span>
+            <span class="n">newpath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">newpath</span><span class="p">):</span>
+                <span class="k">break</span>
+            <span class="n">path</span> <span class="o">=</span> <span class="n">newpath</span>
+        <span class="k">return</span> <span class="n">path</span>
+
+    <span class="k">def</span> <span class="nf">__dir__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">items</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__dict__</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+        <span class="n">items</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__dict__</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+        <span class="k">if</span> <span class="n">Signal</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">mro</span><span class="p">():</span>
+            <span class="n">items</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_dynamic_containers</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">item</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">set</span><span class="p">(</span><span class="n">items</span><span class="p">)</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_base_items</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="s">&#39;_&#39;</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_signals</span><span class="p">):</span>
+            <span class="n">items</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_containers</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+            <span class="c"># items.extend(self._dynamic_containers.values())</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">items</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_signals</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+        <span class="k">return</span> <span class="nb">iter</span><span class="p">(</span><span class="n">items</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_get_branch</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+        <span class="k">if</span> <span class="s">&#39;Shot&#39;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">None</span>
+        <span class="n">branch</span> <span class="o">=</span> <span class="n">cls</span><span class="o">.</span><span class="n">_name</span>
+        <span class="n">parent</span> <span class="o">=</span> <span class="n">cls</span><span class="o">.</span><span class="n">_classparent</span>
+        <span class="k">while</span> <span class="s">&#39;Shot&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">parent</span><span class="p">)</span> <span class="ow">and</span> <span class="s">&#39;Shot&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">parent</span><span class="o">.</span><span class="n">__class__</span><span class="p">):</span>
+            <span class="n">branch</span> <span class="o">=</span> <span class="s">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">parent</span><span class="o">.</span><span class="n">_name</span><span class="p">,</span> <span class="n">branch</span><span class="p">])</span>
+            <span class="n">parent</span> <span class="o">=</span> <span class="n">parent</span><span class="o">.</span><span class="n">_classparent</span>
+        <span class="k">return</span> <span class="n">branch</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_get_branchstr</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+        <span class="n">branch</span> <span class="o">=</span> <span class="n">cls</span><span class="o">.</span><span class="n">_get_branch</span><span class="p">()</span>
+        <span class="k">return</span> <span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">sub</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span> <span class="k">for</span> <span class="n">sub</span> <span class="ow">in</span> <span class="n">branch</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;.&#39;</span><span class="p">)])</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_is_container</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&#39;Container&#39;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">cls</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_is_signal</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&#39;Signal&#39;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">cls</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_is_axis</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&#39;Axis&#39;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">cls</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_is_type</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">obj_type</span><span class="p">):</span>
+        <span class="n">method_name</span> <span class="o">=</span> <span class="s">&#39;_is_{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">obj_type</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">method_name</span><span class="p">)()</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">False</span>
+
+    <span class="k">def</span> <span class="nf">_contains</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">string</span><span class="p">):</span>
+        <span class="n">word_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_title</span><span class="p">]</span> <span class="k">if</span> <span class="n">s</span><span class="p">]</span>
+        <span class="n">word_list</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_tags</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">([</span><span class="n">string</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="n">word</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">word_list</span><span class="p">])</span></div>
+</pre></div>
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, John Schmitt, David R. Smith, Kevin Tritz, Howard Yuh.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'0.0.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,499 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Developer Guide &mdash; Fusion Data Framework 0.0.0 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Fusion Data Framework 0.0.0 documentation" href="index.html"/>
+        <link rel="next" title="Project Documents" href="project_documents.html"/>
+        <link rel="prev" title="User Guide" href="user_guide.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+          <a href="index.html" class="fa fa-home"> Fusion Data Framework</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#fusion-data-platform">Fusion Data Platform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#quick-start">Quick start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#lead-developers">Lead developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#license">License</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user_guide.html">User Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user_guide.html#getting-started">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide.html#usage-examples">Usage examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Developer Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#package-reference">Package reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="project_documents.html">Project Documents</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Fusion Data Framework</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Developer Guide</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="_sources/developer_guide.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="developer-guide">
+<h1>Developer Guide<a class="headerlink" href="#developer-guide" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="getting-started">
+<h2>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<p>This guide is for developers who want to contribute to the FDP project, and this guide describes the development workflow on the PPPL Linux cluster.  If you simply want to use FDP on the PPPL Linux cluster, see the user guide.</p>
+<p>The FDP code repository is hosted on GitHub: <a class="reference external" href="https://github.com/Fusion-Data-Platform/FDP">https://github.com/Fusion-Data-Platform/FDP</a></p>
+<p>To participate in the FDP project as a developer, you must create a GitHub account.  The FDP project uses GitHub and Git for collaborative development and version control.</p>
+<div class="section" id="configure-git">
+<h3>Configure Git<a class="headerlink" href="#configure-git" title="Permalink to this headline">¶</a></h3>
+<p>On the PPPL Linux cluster, load the module git/1.8.0.2 (on Red Hat 6 systems, use git/2.4.2):</p>
+<div class="highlight-python"><div class="highlight"><pre>[sunfire08:~] % module avail git
+--------------------- /usr/pppl/Modules/modulefiles -------------------
+git/1.7.4.1(default)     git/1.8.0.2      git/2.4.2
+
+[sunfire08:~] % module load git/1.8.0.2
+
+[sunfire08:~] % module list
+Currently Loaded Modulefiles:
+1) torque/2.5.2      3) ppplcluster/1.1
+2) moab/5.4.0        4) git/1.8.0.2
+</pre></div>
+</div>
+<p>You may want to add the module load command to your shell start-up files: ~/.cshrc for csh/tcsh or ~/.bash_profile for bash.</p>
+<p>Next, you must configure Git with your name and email (the same email associated with your GitHub account):</p>
+<div class="highlight-python"><div class="highlight"><pre>[sunfire08:~] % git config --global user.name &quot;John Doe&quot;
+[sunfire08:~] % git config --global user.email &quot;JohnDoe@email.com&quot;
+</pre></div>
+</div>
+<p>Also, you may want to set a default editor (e.g. vi, emacs, nedit) for Git comments:</p>
+<div class="highlight-python"><div class="highlight"><pre>[sunfire08:~] % git config --global core.editor nedit
+</pre></div>
+</div>
+<p>You can inspect your Git configuration in the file ~/.gitconfig.  For more information about Git configuration, see <a class="reference external" href="https://help.github.com/articles/set-up-git/">https://help.github.com/articles/set-up-git/</a> or <a class="reference external" href="https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup">https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup</a></p>
+</div>
+<div class="section" id="clone-the-fdp-repository">
+<h3>Clone the FDP repository<a class="headerlink" href="#clone-the-fdp-repository" title="Permalink to this headline">¶</a></h3>
+<p>Git clones repositories into a new directory in your current directory.  In the right column of the FDP repo page (<a class="reference external" href="https://github.com/Fusion-Data-Framework/FDP">https://github.com/Fusion-Data-Framework/FDP</a>), you can find the HTTPS URL (<a class="reference external" href="https://github.com/Fusion-Data-Framework/FDP.git">https://github.com/Fusion-Data-Framework/FDP.git</a>) to clone FDP to your local directory</p>
+<div class="highlight-python"><div class="highlight"><pre>[sunfire08:~] % ls -d FDP
+ls: FDP: No such file or directory
+
+[sunfire08:~] % git clone https://github.com/Fusion-Data-Framework/FDP.git
+Cloning into &#39;FDP&#39;...
+remote: Counting objects: 619, done.
+remote: Total 619 (delta 0), reused 0 (delta 0), pack-reused 619
+Receiving objects: 100% (619/619), 783.01 KiB, done.
+Resolving deltas: 100% (279/279), done.
+
+[sunfire08:~] % ls -d FDP
+FDP/
+</pre></div>
+</div>
+<p>Cloning via SSH is also feasible: <a class="reference external" href="https://help.github.com/articles/set-up-git/#next-steps-authenticating-with-github-from-git">https://help.github.com/articles/set-up-git/#next-steps-authenticating-with-github-from-git</a></p>
+<p>Finally, add your new FDP directory to the <code class="docutils literal"><span class="pre">PYTHONPATH</span></code> environment variable:</p>
+<div class="highlight-python"><div class="highlight"><pre>[sunfire08:~] % setenv PYTHONPATH ${HOME}/FDP:$PYTHONPATH
+
+[sunfire08:~] % echo $PYTHONPATH
+/u/drsmith/FDP:&lt;other directories&gt;
+</pre></div>
+</div>
+<p>You may want to add this action to your shell start-up files, as described above.  In bash, use the export command to set <code class="docutils literal"><span class="pre">PYTHONPATH</span></code>.</p>
+<div class="section" id="git-workflow-for-fdp-development">
+<h4>Git workflow for FDP development<a class="headerlink" href="#git-workflow-for-fdp-development" title="Permalink to this headline">¶</a></h4>
+<p>(1) Create a development branch (here, we call it devbranch) and checkout the new branch:</p>
+<div class="highlight-python"><div class="highlight"><pre>[sunfire08:~] % cd FDP
+
+[sunfire08:~/FDP] % git branch
+* master
+
+[sunfire08:~/FDP] % git branch devbranch
+
+[sunfire08:~/FDP] % git branch
+devbranch
+* master
+
+[sunfire08:~/FDP] % git checkout devbranch
+Switched to branch &#39;devbranch&#39;
+
+[sunfire08:~/FDP] % git branch
+* devbranch
+master
+</pre></div>
+</div>
+<p>Devbranch initializes as a copy of master.  <code class="docutils literal"><span class="pre">git</span> <span class="pre">branch</span></code> lists branches in your local repository, and the asterisk denotes the active branch.  You can switch between local branches with <code class="docutils literal"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">&lt;LocalBranchName&gt;</span></code>.</p>
+<p>(2) Push devbranch to the remote FDP repository at GitHub (you may need to enter your GitHub username and password):</p>
+<div class="highlight-python"><div class="highlight"><pre>[sunfire08:~/FDP] % git push origin devbranch
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/Fusion-Data-Framework/FDP.git
+ * [new branch]      devbranch -&gt; devbranch
+</pre></div>
+</div>
+<p>devbranch is now listed in the FDP repository at GitHub.  <code class="docutils literal"><span class="pre">origin</span></code> is the alias for the remote GitHub repository.  You can view your remote repositories and aliases with <code class="docutils literal"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">-v</span></code>.</p>
+<p>(3) Proceed with FDP development within devbranch: commit changes, add/delete files, and push updates to GitHub.</p>
+<p>As you complete small tasks, you should commit changes to your local repository with <code class="docutils literal"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-a</span> <span class="pre">-m</span> <span class="pre">'&lt;mymessage&gt;'</span></code>.  Also, each commit requires a short message describing the changes:</p>
+<div class="highlight-python"><div class="highlight"><pre>[sunfire02:~/FDP] % git commit -a -m &#39;added dictionary rows in logbook.py&#39;
+[devbranch bb6c58a] added dictionary rows in logbook.py
+1 file changed, 16 insertions(+), 21 deletions(-)
+</pre></div>
+</div>
+<p>If you do not specify a commit message with -m option, then Git will open your default editor and ask for a commit message (see Configure Git above).  The -a option commits all file changes throughout the branch index, not simply your current directory.  The branch index is the list of files Git tracks in the branch.  <code class="docutils literal"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-a</span></code> tracks changes to files in the branch index, so you must add new files to the index and remove deleted files from the index.  You can view the branch index with <code class="docutils literal"><span class="pre">git</span> <span class="pre">ls-files</span></code>, and you can add new files to the index and remove deleted files from the index with <code class="docutils literal"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">-A</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>[sunfire02:~/FDP] % touch temp.py
+
+[sunfire02:~/FDP] % ls temp.py
+temp.py
+
+[sunfire02:~/FDP] % git ls-files temp.py
+
+[sunfire02:~/FDP] % git add -A
+
+[sunfire02:~/FDP] % git ls-files temp.py
+temp.py
+</pre></div>
+</div>
+<p>Note that temp.py appeared in the index only after the command <code class="docutils literal"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">-A</span></code>.  Similarly, deleted files stay in the index until the <code class="docutils literal"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">-A</span></code> is given.</p>
+<p>When you complete a large task, you should “push” changes to the devbranch on GitHub with <code class="docutils literal"><span class="pre">git</span> <span class="pre">push</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>[sunfire05:~/FDP] % git push origin devbranch
+Counting objects: 10, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 1.30 KiB, done.
+Total 6 (delta 3), reused 0 (delta 0)
+To https://github.com/Fusion-Data-Framework/FDP.git
+    129c5d9..a166825 devbranch -&gt; devbranch
+</pre></div>
+</div>
+<p>Again, &#8220;origin&#8221; signifies the branches on the remote GitHub repo.</p>
+<p>(4) While you are working locally in devbranch, others may be modifying master at GitHub.  When you are ready to merge devbranch into master, you should first merge the latest version of master from GitHub into your local devbranch.  To retrieve the latest version of master from GitHub, use <code class="docutils literal"><span class="pre">git</span> <span class="pre">fetch</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>[sunfire05:~/FDP] % git fetch origin master
+From https://github.com/Fusion-Data-Framework/FDP
+* branch            master     -&gt; FETCH_HEAD
+</pre></div>
+</div>
+<p>Next, verify that you are in devbranch and merge origin/master into devbranch:</p>
+<div class="highlight-python"><div class="highlight"><pre>[sunfire08:~/FDP] % git branch
+* devbranch
+master
+
+[sunfire05:~/FDP] % git merge origin/master
+</pre></div>
+</div>
+<p>Next, push your local devbranch to devbranch on GitHub:</p>
+<div class="highlight-python"><div class="highlight"><pre>[sunfire05:~/FDP] % git push origin devbranch
+</pre></div>
+</div>
+<p>Finally, on the GitHub website, in the devbranch area, submit a <em>pull request</em> to pull devbranch into master.</p>
+</div>
+</div>
+</div>
+<div class="section" id="package-reference">
+<h2>Package reference<a class="headerlink" href="#package-reference" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-fdp.classes">
+<span id="subpackage-fdp-classes"></span><h3>Subpackage <code class="docutils literal"><span class="pre">fdp.classes</span></code><a class="headerlink" href="#module-fdp.classes" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal"><span class="pre">fdp.classes</span></code> contains FDP source code.</p>
+</div>
+<div class="section" id="module-fdp.methods">
+<span id="subpackage-fdp-methods"></span><h3>Subpackage <code class="docutils literal"><span class="pre">fdp.methods</span></code><a class="headerlink" href="#module-fdp.methods" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal"><span class="pre">fdp.methods</span></code> contains methods for FDP objects (e.g. a plot method, <code class="docutils literal"><span class="pre">&gt;&gt;&gt;</span> <span class="pre">mpts.te.plot()</span></code>).  Methods can be specified at different levels: global, machine-specific, or diagnostic-specific.</p>
+</div>
+<div class="section" id="class-fdp">
+<h3>Class <code class="docutils literal"><span class="pre">Fdp</span></code><a class="headerlink" href="#class-fdp" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="fdp.classes.fdp.Fdp">
+<em class="property">class </em><code class="descclassname">fdp.classes.fdp.</code><code class="descname">Fdp</code><a class="reference internal" href="_modules/fdp/classes/fdp.html#Fdp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fdp.classes.fdp.Fdp" title="Permalink to this definition">¶</a></dt>
+<dd><p>The primary data object in FDP and the top-level container for machines.</p>
+<p>An instance of <code class="docutils literal"><span class="pre">fdp.classes.fdp.Fdp</span></code> is mapped to the top-level <code class="docutils literal"><span class="pre">fdp</span></code>
+package in <code class="docutils literal"><span class="pre">fdp.__init__.py</span></code>.</p>
+<p><strong>Usage</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">fdp</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">dir</span><span class="p">(</span><span class="n">fdp</span><span class="p">)</span>
+<span class="go">[&#39;cmod&#39;, &#39;diiid&#39;, &#39;nstx&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nstx</span> <span class="o">=</span> <span class="n">fdp</span><span class="o">.</span><span class="n">nstx</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="class-machine">
+<h3>Class <code class="docutils literal"><span class="pre">Machine</span></code><a class="headerlink" href="#class-machine" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="fdp.classes.machine.Machine">
+<em class="property">class </em><code class="descclassname">fdp.classes.machine.</code><code class="descname">Machine</code><span class="sig-paren">(</span><em>name='nstx'</em>, <em>shotlist=[]</em>, <em>xp=[]</em>, <em>date=[]</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fdp/classes/machine.html#Machine"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fdp.classes.machine.Machine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Factory root class that contains shot objects and MDS access methods.</p>
+<p>Note that fdf.factory.Machine is exposed in fdf.__init__, so fdf.Machine
+is valid.</p>
+<p><strong>Usage</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">fdf</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nstx</span> <span class="o">=</span> <span class="n">fdf</span><span class="o">.</span><span class="n">nstx</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nstx</span><span class="o">.</span><span class="n">s140000</span><span class="o">.</span><span class="n">logbook</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nstx</span><span class="o">.</span><span class="n">addshots</span><span class="p">(</span><span class="n">xp</span><span class="o">=</span><span class="mi">1048</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nstx</span><span class="o">.</span><span class="n">s140000</span><span class="o">.</span><span class="n">mpts</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nstx</span><span class="o">.</span><span class="n">listshot</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Machine class contains a model shot object: nstx.s0</p>
+<p>Shot data can be accessed directly through the Machine class:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">nstx</span><span class="o">.</span><span class="n">s141398</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nstx</span><span class="o">.</span><span class="n">s141399</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="fdp.classes.machine.Machine.addshot">
+<code class="descname">addshot</code><span class="sig-paren">(</span><em>shotlist=[]</em>, <em>date=[]</em>, <em>xp=[]</em>, <em>verbose=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fdp/classes/machine.html#Machine.addshot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fdp.classes.machine.Machine.addshot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load shots into the Machine class</p>
+<p><strong>Usage</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">nstx</span><span class="o">.</span><span class="n">addshot</span><span class="p">([</span><span class="mi">140000</span> <span class="mi">140001</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nstx</span><span class="o">.</span><span class="n">addshot</span><span class="p">(</span><span class="n">xp</span><span class="o">=</span><span class="mi">1032</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nstx</span><span class="o">.</span><span class="n">addshot</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="mi">20100817</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note: You can reference shots even if the shots have not been loaded.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fdp.classes.machine.Machine.filter_shots">
+<code class="descname">filter_shots</code><span class="sig-paren">(</span><em>date=[]</em>, <em>xp=[]</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fdp/classes/machine.html#Machine.filter_shots"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fdp.classes.machine.Machine.filter_shots" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a Machine-like object with an immutable shotlist for XP(s) 
+or date(s)</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="class-logbook">
+<h3>Class <code class="docutils literal"><span class="pre">Logbook</span></code><a class="headerlink" href="#class-logbook" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="fdp.classes.logbook.Logbook">
+<em class="property">class </em><code class="descclassname">fdp.classes.logbook.</code><code class="descname">Logbook</code><span class="sig-paren">(</span><em>name='nstx'</em>, <em>root=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fdp/classes/logbook.html#Logbook"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fdp.classes.logbook.Logbook" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="class-shot">
+<h3>Class <code class="docutils literal"><span class="pre">Shot</span></code><a class="headerlink" href="#class-shot" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="fdp.classes.shot.Shot">
+<em class="property">class </em><code class="descclassname">fdp.classes.shot.</code><code class="descname">Shot</code><span class="sig-paren">(</span><em>shot</em>, <em>root=None</em>, <em>parent=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fdp/classes/shot.html#Shot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fdp.classes.shot.Shot" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="class-container">
+<h3>Class <code class="docutils literal"><span class="pre">Container</span></code><a class="headerlink" href="#class-container" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="fdp.classes.container.Container">
+<em class="property">class </em><code class="descclassname">fdp.classes.container.</code><code class="descname">Container</code><span class="sig-paren">(</span><em>module_tree</em>, <em>top=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fdp/classes/container.html#Container"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fdp.classes.container.Container" title="Permalink to this definition">¶</a></dt>
+<dd><p>Container class</p>
+</dd></dl>
+
+</div>
+<div class="section" id="class-signal">
+<h3>Class <code class="docutils literal"><span class="pre">Signal</span></code><a class="headerlink" href="#class-signal" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="fdp.classes.fdpsignal.Signal">
+<em class="property">class </em><code class="descclassname">fdp.classes.fdpsignal.</code><code class="descname">Signal</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fdp/classes/fdpsignal.html#Signal"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fdp.classes.fdpsignal.Signal" title="Permalink to this definition">¶</a></dt>
+<dd><p>sig=fdp.Signal(signal_ndarray, units=&#8217;m/s&#8217;, axes=[&#8216;radius&#8217;,&#8217;time&#8217;], axes_values=[ax1_1Darray, ax2_1Darray], axes_units=[&#8216;s&#8217;,&#8217;cm&#8217;]</p>
+<p>e.g.:
+mds.Signal(np.arange((20*10)).reshape((10,20)), units=&#8217;keV&#8217;, axes=[&#8216;radius&#8217;,&#8217;time&#8217;], axes_values=[100+np.arange(10)*5, np.arange(20)*0.1], axes_units=[&#8216;s&#8217;,&#8217;cm&#8217;])</p>
+<p>or an empty signal:
+s=mds.Signal()
+default axes order=[time, space]
+sig=fdp.Signal(units=&#8217;m/s&#8217;, axes=[&#8216;radius&#8217;,&#8217;time&#8217;], axes_values=[radiusSignal, timeSignal])</p>
+</dd></dl>
+
+</div>
+<div class="section" id="class-node">
+<h3>Class <code class="docutils literal"><span class="pre">Node</span></code><a class="headerlink" href="#class-node" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="fdp.classes.node.Node">
+<em class="property">class </em><code class="descclassname">fdp.classes.node.</code><code class="descname">Node</code><span class="sig-paren">(</span><em>element</em>, <em>parent=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fdp/classes/node.html#Node"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fdp.classes.node.Node" title="Permalink to this definition">¶</a></dt>
+<dd><p>Node class</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-fdp.classes.fdp_globals">
+<span id="module-fdp-classes-fdp-globals"></span><h3>Module <code class="docutils literal"><span class="pre">fdp.classes.fdp_globals</span></code><a class="headerlink" href="#module-fdp.classes.fdp_globals" title="Permalink to this headline">¶</a></h3>
+<p>Package-level attributes, methods, and FdfError class</p>
+<p>Created on Thu Jun 18 11:18:16 2015</p>
+<p>&#64;author: ktritz</p>
+<dl class="data">
+<dt id="fdp.classes.fdp_globals.EVENT_SERVERS">
+<code class="descclassname">fdp.classes.fdp_globals.</code><code class="descname">EVENT_SERVERS</code><em class="property"> = {'nstx': 'skylark.pppl.gov:8501', 'ltx': 'lithos.pppl.gov:8000'}</em><a class="headerlink" href="#fdp.classes.fdp_globals.EVENT_SERVERS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dictionary: machine-name key paired to MDS server</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="fdp.classes.fdp_globals.FDP_DIR">
+<code class="descclassname">fdp.classes.fdp_globals.</code><code class="descname">FDP_DIR</code><em class="property"> = '/u/drsmith/fdp/fdp/classes/..'</em><a class="headerlink" href="#fdp.classes.fdp_globals.FDP_DIR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Path string: top-level directory for FDF package</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="fdp.classes.fdp_globals.FdpError">
+<em class="property">exception </em><code class="descclassname">fdp.classes.fdp_globals.</code><code class="descname">FdpError</code><span class="sig-paren">(</span><em>message=''</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fdp/classes/fdp_globals.html#FdpError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fdp.classes.fdp_globals.FdpError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Error class for FDF package</p>
+<p><strong>Usage</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">raise</span> <span class="n">FdfError</span><span class="p">(</span><span class="s">&#39;my error message&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="data">
+<dt id="fdp.classes.fdp_globals.LOGBOOK_CREDENTIALS">
+<code class="descclassname">fdp.classes.fdp_globals.</code><code class="descname">LOGBOOK_CREDENTIALS</code><em class="property"> = {'nstx': {'username': 'drsmith', 'database': 'nstxlogs', 'server': 'sql2008.pppl.gov\\sql2008', 'table': 'entries', 'password': 'pfcworld', 'port': '62917'}}</em><a class="headerlink" href="#fdp.classes.fdp_globals.LOGBOOK_CREDENTIALS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dictionary: machine-name key paired with logbook login credentials</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-fdp.classes.factory">
+<span id="module-fdp-classes-factory"></span><h3>Module <code class="docutils literal"><span class="pre">fdp.classes.factory</span></code><a class="headerlink" href="#module-fdp.classes.factory" title="Permalink to this headline">¶</a></h3>
+<p>Created on Thu Jun 18 10:38:40 2015
+&#64;author: ktritz</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="project_documents.html" class="btn btn-neutral float-right" title="Project Documents">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="user_guide.html" class="btn btn-neutral" title="User Guide"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, John Schmitt, David R. Smith, Kevin Tritz, Howard Yuh.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.0.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
