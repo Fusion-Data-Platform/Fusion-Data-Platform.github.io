@@ -5,6 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Introduction &mdash; Fusion Data Framework 0.0.0 documentation</title>
@@ -14,7 +15,6 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
   
   
@@ -35,7 +35,7 @@
         <link rel="prev" title="Fusion Data Platform" href="index.html"/> 
 
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+  <script src="_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -45,11 +45,27 @@
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-nav-search">
-        
-          <a href="index.html" class="fa fa-home"> Fusion Data Framework</a>
-        
-        
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Fusion Data Framework
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0
+              </div>
+            
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -57,40 +73,34 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-      </div>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-        
           
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
-              <ul class="current">
+            
+            
+                <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="">Introduction</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#fusion-data-platform">Fusion Data Platform</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#quick-start">Quick start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fusion-data-platform">Fusion Data Platform</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#project-objectives">Project objectives</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#example-usage">Example usage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#lead-developers">Lead developers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#license">License</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="user_guide.html">User Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="user_guide.html#getting-started">Getting started</a></li>
-<li class="toctree-l2"><a class="reference internal" href="user_guide.html#usage-examples">Usage examples</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="developer_guide.html">Developer Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="developer_guide.html#getting-started">Getting started</a></li>
-<li class="toctree-l2"><a class="reference internal" href="developer_guide.html#package-reference">Package reference</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="project_documents.html">Project Documents</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="project_documents.html#october-9-2015-meeting">October 9, 2015 meeting</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project_documents.html">Project Documents</a></li>
 </ul>
 
+            
           
-        
+        </div>
       </div>
-      &nbsp;
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -105,20 +115,29 @@
       
       <div class="wy-nav-content">
         <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
     <li>Introduction</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="_sources/introduction.txt" rel="nofollow"> View page source</a>
+          
+            <a href="_sources/introduction.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
   </ul>
   <hr/>
 </div>
-          <div role="main" class="document">
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="section" id="introduction">
 <h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
@@ -128,68 +147,86 @@
 <ul class="simple">
 <li>Github repository: <a class="reference external" href="https://github.com/Fusion-Data-Platform/fdp">https://github.com/Fusion-Data-Platform/fdp</a></li>
 <li>Documentation: <a class="reference external" href="http://Fusion-Data-Platform.github.io/">http://Fusion-Data-Platform.github.io/</a></li>
-<li>Google Group: <a class="reference external" href="https://groups.google.com/forum/#!forum/fusion-data-platform">https://groups.google.com/forum/#!forum/fusion-data-platform</a></li>
+</ul>
+<div class="section" id="project-objectives">
+<h3>Project objectives<a class="headerlink" href="#project-objectives" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Integrate data sources, data, and analysis methods in a single, extensible data object<ul>
+<li>Streamline data access for multiple facilities, diagnostics, and databases</li>
+<li>Organize data and analysis methods in an intuitive object-oriented framework</li>
+</ul>
+</li>
+<li>Promote collaborative code development and reduce inefficient code duplication</li>
+<li>Reduce barriers to entry for new students and scientists</li>
+<li>Free components and flexible usage<ul>
+<li>Python, Numpy, Matplotlib, Github, etc.</li>
+<li>Platform-independent: desktop Mac/PC, Linux cluster</li>
+<li>Command-line tool or import into code</li>
+</ul>
+</li>
 </ul>
 </div>
-<div class="section" id="quick-start">
-<h2>Quick start<a class="headerlink" href="#quick-start" title="Permalink to this headline">¶</a></h2>
-<p>On the PPPL computing cluster, load the FDP module and start Python:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ module load nstx/fdp
-$ python
+</div>
+<div class="section" id="example-usage">
+<h2>Example usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h2>
+<p>Initiate an FDP session:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">fdp</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nstxu</span> <span class="o">=</span> <span class="n">fdp</span><span class="o">.</span><span class="n">nstxu</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Plot electron temperature from Thomson scattering for NSTX shot 140000:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">fdp</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">nstx</span> <span class="o">=</span> <span class="n">fdp</span><span class="o">.</span><span class="n">nstx</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">nstx</span><span class="o">.</span><span class="n">s140000</span><span class="o">.</span><span class="n">mpts</span><span class="o">.</span><span class="n">te</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-</pre></div>
-</div>
-<p>View logbook entries for NSTX shot 140000:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">nstx</span><span class="o">.</span><span class="n">s140000</span><span class="o">.</span><span class="n">logbook</span><span class="p">()</span>
-
-<span class="go">Logbook entries for 140000</span>
-<span class="go">************************************</span>
-<span class="go">140000 on 2010-08-17 in XP 1048</span>
-<span class="go">adiallo in topic PHYS OPS</span>
-
-<span class="go">Small increase of the SPA current by 50 A.</span>
-<span class="go">Good.</span>
-<span class="go">************************************</span>
-</pre></div>
-</div>
-<p>List diagnostic containers for NSTX:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">myshot</span> <span class="o">=</span> <span class="n">nstx</span><span class="o">.</span><span class="n">s140000</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">dir</span><span class="p">(</span><span class="n">myshot</span><span class="p">)</span>
+<p>List diagnostics:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">dir</span><span class="p">(</span><span class="n">nstxu</span><span class="o">.</span><span class="n">s141000</span><span class="p">)</span>
 <span class="go">[&#39;bes&#39;, &#39;chers&#39;, &#39;equilibria&#39;, &#39;filterscopes&#39;, &#39;magnetics&#39;, &#39;mpts&#39;, &#39;mse&#39;, &#39;usxr&#39;]</span>
-
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">dir</span><span class="p">(</span><span class="n">myshot</span><span class="o">.</span><span class="n">equilibria</span><span class="p">)</span>
-<span class="go">[&#39;efit01&#39;, &#39;efit02&#39;, &#39;shot&#39;]</span>
-
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">dir</span><span class="p">(</span><span class="n">myshot</span><span class="o">.</span><span class="n">equilibria</span><span class="o">.</span><span class="n">efit02</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>View logbook entries:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nstxu</span><span class="o">.</span><span class="n">s141000</span><span class="o">.</span><span class="n">logbook</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>List signals:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nstxu</span><span class="o">.</span><span class="n">s141000</span><span class="o">.</span><span class="n">equilibria</span><span class="o">.</span><span class="n">efit02</span><span class="o">.</span><span class="n">listSignals</span><span class="p">()</span>
 <span class="go">[&#39;psirz&#39;, &#39;qpsi&#39;, &#39;shot&#39;, &#39;userid&#39;, &#39;wmhd&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nstxu</span><span class="o">.</span><span class="n">s204620</span><span class="o">.</span><span class="n">chers</span><span class="o">.</span><span class="n">listSignals</span><span class="p">()</span>
+<span class="go">[&#39;ft&#39;, &#39;nc&#39;, &#39;ti&#39;, &#39;valid&#39;, &#39;vt&#39;]</span>
 </pre></div>
 </div>
-<p>For all shots in XP 1013 on NSTX, plot ion temperature from charge-exchange spectroscopy:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">xp1013</span> <span class="o">=</span> <span class="n">nstx</span><span class="o">.</span><span class="n">filter_shots</span><span class="p">(</span><span class="n">xp</span><span class="o">=</span><span class="mi">1013</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">shot</span> <span class="ow">in</span> <span class="n">xp1013</span><span class="p">:</span>
-<span class="gp">... </span>    <span class="n">shot</span><span class="o">.</span><span class="n">chers</span><span class="o">.</span><span class="n">ti</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<p>Plot a signal:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nstxu</span><span class="o">.</span><span class="n">s141000</span><span class="o">.</span><span class="n">mpts</span><span class="o">.</span><span class="n">te</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>For all NSTX shots on 8/17/2010, plot the low-f, odd-n magnetics signal:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">myday</span> <span class="o">=</span> <span class="n">nstx</span><span class="o">.</span><span class="n">filter_shots</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="mi">20100817</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">shot</span> <span class="ow">in</span> <span class="n">myday</span><span class="p">:</span>
-<span class="gp">... </span>    <span class="n">shot</span><span class="o">.</span><span class="n">magnetics</span><span class="o">.</span><span class="n">filtered</span><span class="o">.</span><span class="n">lowf_oddn</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<p>List methods for a signal:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nstxu</span><span class="o">.</span><span class="n">s141000</span><span class="o">.</span><span class="n">bes</span><span class="o">.</span><span class="n">d1ch01</span><span class="o">.</span><span class="n">listMethods</span><span class="p">()</span>
+<span class="go">[&#39;animate&#39;, &#39;fft&#39;, &#39;loadConfig&#39;, &#39;plotfft&#39;]</span>
+</pre></div>
+</div>
+<p>Load shots for an XP:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">xp1013</span> <span class="o">=</span> <span class="n">nstxu</span><span class="o">.</span><span class="n">filter_shots</span><span class="p">(</span><span class="n">xp</span><span class="o">=</span><span class="mi">1013</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">dir</span><span class="p">(</span><span class="n">xp1013</span><span class="p">)</span>
+<span class="go">[&#39;s141382&#39;, &#39;s141383&#39;, &#39;s141384&#39;, &#39;s141385&#39;, &#39;s141386&#39;, &#39;s141387&#39;,</span>
+<span class="go">&#39;s141388&#39;, &#39;s141389&#39;, &#39;s141390&#39;, &#39;s141391&#39;, &#39;s141392&#39;, &#39;s141393&#39;,</span>
+<span class="go">&#39;s141394&#39;, &#39;s141395&#39;, &#39;s141396&#39;, &#39;s141397&#39;, &#39;s141398&#39;, &#39;s141399&#39;,</span>
+<span class="go">&#39;s141400&#39;, &#39;s141401&#39;, &#39;s141402&#39;, &#39;s141403&#39;, &#39;s141404&#39;, &#39;s141405&#39;,</span>
+<span class="go">&#39;s141406&#39;, &#39;s141407&#39;, &#39;s141408&#39;, &#39;s141409&#39;, &#39;s141410&#39;, &#39;s141411&#39;,</span>
+<span class="go">&#39;s141412&#39;, &#39;s141413&#39;, &#39;s141414&#39;]</span>
+</pre></div>
+</div>
+<p>As the examples above illustrate, the FDP data object is organized like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>&lt;machine&gt;.&lt;shot&gt;.&lt;diagnostic&gt;.&lt;signal&gt;.&lt;method&gt;
+</pre></div>
+</div>
+<p>or, for diagnostic sub-containers like spline profiles and x-ray arrays:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>&lt;machine&gt;.&lt;shot&gt;.&lt;diagnostic&gt;.&lt;sub-container&gt;.&lt;signal&gt;.&lt;method&gt;
 </pre></div>
 </div>
 </div>
 <div class="section" id="lead-developers">
 <h2>Lead developers<a class="headerlink" href="#lead-developers" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>John Schmitt, Princeton Plasma Physics Lab</li>
 <li>David R. Smith, U. Wisconsin-Madison</li>
 <li>Kevin Tritz, The Johns Hopkins U.</li>
 <li>Howard Yuh, Nova Photonics</li>
 </ul>
+<p>PPPL cluster support from John Schmitt</p>
 </div>
 <div class="section" id="license">
 <h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
@@ -214,15 +251,16 @@ SOFTWARE.</p>
 </div>
 
 
+           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="user_guide.html" class="btn btn-neutral float-right" title="User Guide">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="user_guide.html" class="btn btn-neutral float-right" title="User Guide" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral" title="Fusion Data Platform"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral" title="Fusion Data Platform" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -232,12 +270,13 @@ SOFTWARE.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2015, John Schmitt, David R. Smith, Kevin Tritz, Howard Yuh.
+
     </p>
   </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-  
 </footer>
+
         </div>
       </div>
 

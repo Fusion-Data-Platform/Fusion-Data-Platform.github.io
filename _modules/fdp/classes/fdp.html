@@ -5,6 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>fdp.classes.fdp &mdash; Fusion Data Framework 0.0.0 documentation</title>
@@ -14,7 +15,6 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
   
   
@@ -34,7 +34,7 @@
         <link rel="up" title="Module code" href="../../index.html"/> 
 
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+  <script src="../../../_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -44,11 +44,27 @@
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-nav-search">
-        
-          <a href="../../../index.html" class="fa fa-home"> Fusion Data Framework</a>
-        
-        
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Fusion Data Framework
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0
+              </div>
+            
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -56,40 +72,25 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-      </div>
-
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-        
-          
-          
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../introduction.html">Introduction</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../introduction.html#fusion-data-platform">Fusion Data Platform</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../introduction.html#quick-start">Quick start</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../introduction.html#lead-developers">Lead developers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../introduction.html#license">License</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_guide.html">User Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../user_guide.html#getting-started">Getting started</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../user_guide.html#usage-examples">Usage examples</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer_guide.html">Developer Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../developer_guide.html#getting-started">Getting started</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../developer_guide.html#package-reference">Package reference</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../../../project_documents.html">Project Documents</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../project_documents.html#october-9-2015-meeting">October 9, 2015 meeting</a></li>
-</ul>
-</li>
-</ul>
 
           
-        
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../project_documents.html">Project Documents</a></li>
+</ul>
+
+            
+          
+        </div>
       </div>
-      &nbsp;
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -104,7 +105,13 @@
       
       <div class="wy-nav-content">
         <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../../../index.html">Docs</a> &raquo;</li>
       
@@ -113,22 +120,25 @@
     <li>fdp.classes.fdp</li>
       <li class="wy-breadcrumbs-aside">
         
+          
+        
       </li>
   </ul>
   <hr/>
 </div>
-          <div role="main" class="document">
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <h1>Source code for fdp.classes.fdp</h1><div class="highlight"><pre>
-<span class="c"># -*- coding: utf-8 -*-</span>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">Created on Wed Nov 25 19:35:36 2015</span>
 
 <span class="sd">@author: ktritz</span>
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">fdp_globals</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">factory</span>
 <span class="kn">from</span> <span class="nn">.machine</span> <span class="kn">import</span> <span class="n">Machine</span>
-<span class="kn">from</span> <span class="nn">.factory</span> <span class="kn">import</span> <span class="n">parse_method</span>
 
 
 <div class="viewcode-block" id="Fdp"><a class="viewcode-back" href="../../../developer_guide.html#fdp.classes.fdp.Fdp">[docs]</a><span class="k">class</span> <span class="nc">Fdp</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
@@ -142,18 +152,18 @@
 <span class="sd">    </span>
 <span class="sd">        &gt;&gt;&gt; import fdp</span>
 <span class="sd">        &gt;&gt;&gt; dir(fdp)</span>
-<span class="sd">        [&#39;cmod&#39;, &#39;diiid&#39;, &#39;nstx&#39;]</span>
-<span class="sd">        &gt;&gt;&gt; nstx = fdp.nstx</span>
+<span class="sd">        [&#39;cmod&#39;, &#39;diiid&#39;, &#39;nstxu&#39;]</span>
+<span class="sd">        &gt;&gt;&gt; nstxu = fdp.nstxu</span>
 <span class="sd">        </span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="nf">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attribute</span><span class="p">):</span>
         <span class="n">machine_name</span> <span class="o">=</span> <span class="n">fdp_globals</span><span class="o">.</span><span class="n">machineAlias</span><span class="p">(</span><span class="n">attribute</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">machine_name</span> <span class="ow">in</span> <span class="n">fdp_globals</span><span class="o">.</span><span class="n">MACHINES</span><span class="p">:</span>
-            <span class="n">MachineClassName</span> <span class="o">=</span> <span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s">&#39;Machine&#39;</span><span class="p">,</span> <span class="n">machine_name</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()])</span>
+            <span class="n">MachineClassName</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;Machine&#39;</span><span class="p">,</span> <span class="n">machine_name</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()])</span>
             <span class="n">MachineClass</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">MachineClassName</span><span class="p">,</span> <span class="p">(</span><span class="n">Machine</span><span class="p">,</span> <span class="p">),</span> <span class="p">{})</span>
             <span class="n">MachineClass</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">machine_name</span>
-            <span class="n">parse_method</span><span class="p">(</span><span class="n">MachineClass</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="s">&#39;top&#39;</span><span class="p">)</span>
-            <span class="n">parse_method</span><span class="p">(</span><span class="n">MachineClass</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">machine_name</span><span class="p">)</span>
+            <span class="n">factory</span><span class="o">.</span><span class="n">parse_method</span><span class="p">(</span><span class="n">MachineClass</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">)</span>
+            <span class="n">factory</span><span class="o">.</span><span class="n">parse_method</span><span class="p">(</span><span class="n">MachineClass</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">machine_name</span><span class="p">)</span>
             <span class="n">machine</span> <span class="o">=</span> <span class="n">MachineClass</span><span class="p">(</span><span class="n">machine_name</span><span class="p">)</span>
             <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">machine_name</span><span class="p">,</span> <span class="n">machine</span><span class="p">)</span>
             <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">machine_name</span><span class="p">)</span>
@@ -163,6 +173,7 @@
         <span class="k">return</span> <span class="n">fdp_globals</span><span class="o">.</span><span class="n">MACHINES</span></div>
 </pre></div>
 
+           </div>
           </div>
           <footer>
   
@@ -172,12 +183,13 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2015, John Schmitt, David R. Smith, Kevin Tritz, Howard Yuh.
+
     </p>
   </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-  
 </footer>
+
         </div>
       </div>
 

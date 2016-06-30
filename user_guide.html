@@ -5,6 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>User Guide &mdash; Fusion Data Framework 0.0.0 documentation</title>
@@ -14,7 +15,6 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
   
   
@@ -35,7 +35,7 @@
         <link rel="prev" title="Introduction" href="introduction.html"/> 
 
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+  <script src="_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -45,11 +45,27 @@
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-nav-search">
-        
-          <a href="index.html" class="fa fa-home"> Fusion Data Framework</a>
-        
-        
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Fusion Data Framework
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0
+              </div>
+            
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -57,40 +73,32 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-      </div>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-        
           
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
-              <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#fusion-data-platform">Fusion Data Platform</a></li>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#quick-start">Quick start</a></li>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#lead-developers">Lead developers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#license">License</a></li>
-</ul>
-</li>
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">User Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting started</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#usage-examples">Usage examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#usage-examples">Usage examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#initiate-a-machine-instance">Initiate a machine instance</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="developer_guide.html">Developer Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="developer_guide.html#getting-started">Getting started</a></li>
-<li class="toctree-l2"><a class="reference internal" href="developer_guide.html#package-reference">Package reference</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="project_documents.html">Project Documents</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="project_documents.html#october-9-2015-meeting">October 9, 2015 meeting</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project_documents.html">Project Documents</a></li>
 </ul>
 
+            
           
-        
+        </div>
       </div>
-      &nbsp;
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -105,20 +113,29 @@
       
       <div class="wy-nav-content">
         <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
     <li>User Guide</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="_sources/user_guide.txt" rel="nofollow"> View page source</a>
+          
+            <a href="_sources/user_guide.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
   </ul>
   <hr/>
 </div>
-          <div role="main" class="document">
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="section" id="user-guide">
 <h1>User Guide<a class="headerlink" href="#user-guide" title="Permalink to this headline">¶</a></h1>
@@ -126,7 +143,7 @@
 <h2>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
 <p>This guide is for people who want to use FDP on the PPPL Linux cluster.  If you wish to contribute to the FDP project as a developer, see the developer guide.</p>
 <p>To use FDP on the PPPL Linux cluster, load the module nstx/fdp (you may need to unload other nstx modules):</p>
-<div class="highlight-python"><div class="highlight"><pre>[sunfire06:~] % module load nstx/fdp
+<div class="highlight-python"><div class="highlight"><pre><span></span>[sunfire06:~] % module load nstx/fdp
 
 [sunfire06:~] % module list
 Currently Loaded Modulefiles:
@@ -137,13 +154,13 @@ Currently Loaded Modulefiles:
 </pre></div>
 </div>
 <p>Verify that python points to <code class="docutils literal"><span class="pre">/p/fdp/anaconda/bin/python</span></code>:</p>
-<div class="highlight-python"><div class="highlight"><pre>[sunfire06:~] % which python
+<div class="highlight-python"><div class="highlight"><pre><span></span>[sunfire06:~] % which python
 /p/fdp/anaconda/bin/python
 </pre></div>
 </div>
 <p>If python does not point to <code class="docutils literal"><span class="pre">/p/fdp/anaconda/bin/python</span></code>, then PATH contains to a different python distribution.  In this case, you need to modify PATH so <code class="docutils literal"><span class="pre">/p/fdp/anaconda/bin</span></code> is the first python distribution in PATH.</p>
 <p>Finally, you can launch python and import the FDP package:</p>
-<div class="highlight-python"><div class="highlight"><pre>[sunfire06:~] % python
+<div class="highlight-python"><div class="highlight"><pre><span></span>[sunfire06:~] % python
 Python 2.7.10 |Anaconda 2.3.0 (64-bit)| (default, Sep 15 2015, 14:50:01)
 [GCC 4.4.7 20120313 (Red Hat 4.4.7-1)] on linux2
 Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
@@ -158,45 +175,45 @@ Please check out: http://continuum.io/thanks and https://anaconda.org
 <div class="section" id="usage-examples">
 <h2>Usage examples<a class="headerlink" href="#usage-examples" title="Permalink to this headline">¶</a></h2>
 <p>First, import the FDP module:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">fdp</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">fdp</span>
 </pre></div>
 </div>
 <div class="section" id="initiate-a-machine-instance">
 <h3>Initiate a machine instance<a class="headerlink" href="#initiate-a-machine-instance" title="Permalink to this headline">¶</a></h3>
 <p><strong>Define</strong> a NSTX machine instance:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">nstx</span> <span class="o">=</span> <span class="n">fdp</span><span class="o">.</span><span class="n">nstx</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nstxu</span> <span class="o">=</span> <span class="n">fdp</span><span class="o">.</span><span class="n">nstxu</span>
 </pre></div>
 </div>
 <p>Shots are added as referenced.  For instance, without previous reference to 139980, you can enter:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">nstx</span><span class="o">.</span><span class="n">s139980</span><span class="o">.</span><span class="n">chers</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nstxu</span><span class="o">.</span><span class="n">s139980</span><span class="o">.</span><span class="n">chers</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
 </div>
 <p><strong>Add shots</strong> to the NSTX instance:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">nstx</span><span class="o">.</span><span class="n">addshot</span><span class="p">(</span><span class="mi">140000</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nstxu</span><span class="o">.</span><span class="n">addshot</span><span class="p">(</span><span class="mi">140000</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>or a shotlist:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">nstx</span><span class="o">.</span><span class="n">addshot</span><span class="p">([</span><span class="mi">141400</span><span class="p">,</span> <span class="mi">141401</span><span class="p">,</span> <span class="mi">141402</span><span class="p">])</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nstxu</span><span class="o">.</span><span class="n">addshot</span><span class="p">([</span><span class="mi">141400</span><span class="p">,</span> <span class="mi">141401</span><span class="p">,</span> <span class="mi">141402</span><span class="p">])</span>
 </pre></div>
 </div>
 <p>or by XP:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">nstx</span><span class="o">.</span><span class="n">addshot</span><span class="p">(</span><span class="n">xp</span><span class="o">=</span><span class="mi">1048</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nstxu</span><span class="o">.</span><span class="n">addshot</span><span class="p">(</span><span class="n">xp</span><span class="o">=</span><span class="mi">1048</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>or by date (string or int YYYYMMDD):</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">nstx</span><span class="o">.</span><span class="n">addshot</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="mi">20100817</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nstxu</span><span class="o">.</span><span class="n">addshot</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="mi">20100817</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>List shots</strong> presently loaded:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">dir</span><span class="p">(</span><span class="n">nstx</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">dir</span><span class="p">(</span><span class="n">nstxu</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>or:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">nstx</span><span class="o">.</span><span class="n">listshot</span><span class="p">()</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nstxu</span><span class="o">.</span><span class="n">listshot</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Get a custom <strong>shotlist</strong>:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">my_shotlist</span> <span class="o">=</span> <span class="n">nstx</span><span class="o">.</span><span class="n">get_shotlist</span><span class="p">(</span><span class="n">xp</span><span class="o">=</span><span class="mi">1032</span><span class="p">)</span>  <span class="c"># returns numpy.ndarray</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_shotlist</span> <span class="o">=</span> <span class="n">nstxu</span><span class="o">.</span><span class="n">get_shotlist</span><span class="p">(</span><span class="n">xp</span><span class="o">=</span><span class="mi">1032</span><span class="p">)</span>  <span class="c1"># returns numpy.ndarray</span>
 </pre></div>
 </div>
 </div>
@@ -204,15 +221,16 @@ Please check out: http://continuum.io/thanks and https://anaconda.org
 </div>
 
 
+           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="developer_guide.html" class="btn btn-neutral float-right" title="Developer Guide">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="developer_guide.html" class="btn btn-neutral float-right" title="Developer Guide" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="introduction.html" class="btn btn-neutral" title="Introduction"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="introduction.html" class="btn btn-neutral" title="Introduction" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -222,12 +240,13 @@ Please check out: http://continuum.io/thanks and https://anaconda.org
   <div role="contentinfo">
     <p>
         &copy; Copyright 2015, John Schmitt, David R. Smith, Kevin Tritz, Howard Yuh.
+
     </p>
   </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-  
 </footer>
+
         </div>
       </div>
 
